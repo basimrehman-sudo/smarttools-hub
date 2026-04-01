@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #202124;
+    --primary: #1a73e8;
+    --surface: #f8f9fa;
+    --border: #dadce0;
+  }
+
+  .dark {
+    --background: #121212;
+    --foreground: #e8eaed;
+    --primary: #8ab4f8;
+    --surface: #202124;
+    --border: #3c4043;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 200ms, background-color 200ms;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Google-style card */
+.g-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 200ms, border-color 200ms;
+  overflow: hidden;
+}
+
+.g-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom Google-style button */
+.g-button {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  transition: opacity 200ms;
+}
+
+.g-button:hover {
+  opacity: 0.9;
+}
+
+/* Glassmorphism generic utility */
+.glass {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  background-color: rgba(18, 18, 18, 0.8);
+}
